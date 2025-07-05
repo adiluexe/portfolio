@@ -1,0 +1,37 @@
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('~/assets/fonts/satoshi/Satoshi-Medium.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('~/assets/fonts/satoshi/Satoshi-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Centrion';
+    src: url('~/assets/fonts/centrion/Centrion-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Centrion-High';
+    src: url('~/assets/fonts/centrion/Centrion-High.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Rule for your "spice" letters */
+.font-spice {
+    font-family: 'Centrion', sans-serif;
+}
+
+.font-spice-high {
+    font-family: 'Centrion-High', sans-serif;
+}
