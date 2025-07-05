@@ -1,5 +1,5 @@
 <template>
-  <div class="font-satoshi bg-black text-white">
+  <div class="font-satoshi bg-background text-text">
     <TheHeader />
     <TheNavigation />
     <main class="min-h-screen">

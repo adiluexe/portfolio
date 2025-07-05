@@ -11,14 +11,14 @@ const onContainerEnter = () => {
   $gsap.to(navBg.value, {
     duration: 0.4,
     opacity: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#161A30', // Accent color
     ease: 'power3.out'
   });
 
-  // Animate ALL link text to black
+  // Animate ALL link text to background color
   $gsap.to(navList.value.querySelectorAll('a'), {
     duration: 0.4,
-    color: '#000000',
+    color: '#F0F0F0',
     ease: 'power3.out'
   });
 }
@@ -31,10 +31,10 @@ const onContainerLeave = () => {
     ease: 'power3.in'
   });
 
-  // Animate ALL link text back to white
+  // Animate ALL link text back to text color
   $gsap.to(navList.value.querySelectorAll('a'), {
     duration: 0.4,
-    color: '#ffffff',
+    color: '#161A30',
     ease: 'power3.in'
   });
 }
@@ -62,33 +62,33 @@ const onLinkLeave = (e) => {
 <template>
   <nav class="fixed inset-0 flex items-center justify-center z-40 pointer-events-none">
     <!-- Animated Background Bar -->
-    <div ref="navBg" class="absolute top-1/2 -translate-y-1/2 w-full h-24 bg-white opacity-0 pointer-events-none z-0"></div>
+    <div ref="navBg" class="absolute top-1/2 -translate-y-1/2 w-full h-24 bg-accent opacity-0 pointer-events-none z-0"></div>
 
     <!-- Links Container -->
-    <div @mouseenter="onContainerEnter" @mouseleave="onContainerLeave" class="relative w-full max-w-6xl px-8 pointer-events-auto">
-      <ul ref="navList" class="flex items-center justify-between uppercase text-sm tracking-widest">
+    <div @mouseenter="onContainerEnter" @mouseleave="onContainerLeave" class="relative w-full pointer-events-auto">
+      <ul ref="navList" class="flex items-center justify-around uppercase text-sm tracking-tighter">
         <li @mouseenter="onLinkEnter" @mouseleave="onLinkLeave">
-          <NuxtLink to="/about" class="block p-4 pointer-events-auto text-left">
-            <span class="block text-xs font-semibold">01</span>
-            About
+          <NuxtLink to="/about" class="block p-4 pointer-events-auto text-left text-text">
+            <span class="block text-xs font-normal">01</span>
+            <span class="font-spice">A</span>bout
           </NuxtLink>
         </li>
         <li @mouseenter="onLinkEnter" @mouseleave="onLinkLeave">
-          <NuxtLink to="/works" class="block p-4 pointer-events-auto text-left">
-            <span class="block text-xs font-semibold">02</span>
-            Works
+          <NuxtLink to="/works" class="block p-4 pointer-events-auto text-left text-text">
+            <span class="block text-xs font-normal">02</span>
+            <span class="font-spice">W</span>orks
           </NuxtLink>
         </li>
         <li @mouseenter="onLinkEnter" @mouseleave="onLinkLeave">
-          <NuxtLink to="/contact" class="block p-4 pointer-events-auto text-left">
-            <span class="block text-xs font-semibold">03</span>
-            Contact
+          <NuxtLink to="/contact" class="block p-4 pointer-events-auto text-left text-text">
+            <span class="block text-xs font-normal">03</span>
+            <span class="font-spice">C</span>ontact
           </NuxtLink>
         </li>
         <li @mouseenter="onLinkEnter" @mouseleave="onLinkLeave">
-          <NuxtLink to="/playground" class="block p-4 pointer-events-auto text-left">
-            <span class="block text-xs font-semibold">04</span>
-            Playground
+          <NuxtLink to="/playground" class="block p-4 pointer-events-auto text-left text-text">
+            <span class="block text-xs font-normal">04</span>
+            <span class="font-spice">P</span>layground
           </NuxtLink>
         </li>
       </ul>
