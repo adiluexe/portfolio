@@ -20,7 +20,7 @@ onMounted(() => {
     <!-- Main Hero Name -->
     <div class="flex-grow flex items-center justify-center pb-96">
       <h1 ref="heroTitle" class="text-9xl font-normal uppercase tracking-tighter text-primary">
-        <span class="font-spice">E</span>xequel <span class="font-spice">A</span>dizon
+        E<span class="font-spice">x</span>equel A<span class="font-spice">d</span>izon
       </h1>
     </div>
 
