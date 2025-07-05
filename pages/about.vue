@@ -38,7 +38,7 @@ onMounted(() => {
           <!-- <Icon name="custom:adiluexe-logo" class="px-4 text-sm animate-spin-slow" /> -->
         </p>
         <p class="text-3xl">EXEQUEL.ADIZON@GMAIL.COM</p>
-        <p class="text-3xl"><a href="https://www.linkedin.com/in/adiluexe/" target="_blank">LINKEDIN</a> / <a href="https://github.com/adiluexe" target="_blank">GITHUB</a></p>
+        <p class="text-3xl"><a href="https://www.linkedin.com/in/exequel-adizon/" target="_blank">LINKEDIN</a> / <a href="https://github.com/adiluexe" target="_blank">GITHUB</a></p>
       </div>
       <div class="bg-primary w-full max-w-2xl h-64"></div>
     </div>
