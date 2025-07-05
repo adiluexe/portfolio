@@ -1,9 +1,26 @@
+<script setup>
+import { onMounted, ref } from 'vue'
+
+const { $gsap } = useNuxtApp()
+
+const heroTitle = ref(null)
+
+onMounted(() => {
+  $gsap.from(heroTitle.value, {
+    duration: 1.5,
+    y: 100, // Start 100px below its final position
+    opacity: 0, // Start fully transparent
+    ease: 'power4.out',
+  })
+})
+</script>
+
 <template>
   <div class="w-full min-h-screen flex flex-col justify-center items-center text-center relative">
     <!-- Main Hero Name -->
-    <div class="flex-grow flex items-center justify-center pb-96"> <!-- Increased padding to push name up -->
-      <h1 class="text-9xl font-normal uppercase tracking-tighter">
-        <span class="font-spice">E</span>xequel <span class="font-spice">A</span>dizon
+    <div class="flex-grow flex items-center justify-center pb-56">
+      <h1 ref="heroTitle" class="text-9xl font-bold uppercase tracking-widest">
+        Exequel Adizon
       </h1>
     </div>
 
