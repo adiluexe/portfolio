@@ -37,5 +37,5 @@
 
 .adaptive-text {
     color: white;
-    mix-blend-mode: exclusion;
+    mix-blend-mode: difference;
 }
