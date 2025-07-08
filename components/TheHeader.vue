@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed inset-x-0 top-0 w-full z-50 p-8">
+  <header class="fixed inset-x-0 top-0 w-full z-50 p-8 adaptive-text">
     <div class="container mx-auto">
       <div class="flex justify-around items-center">
         <div class="w-1/3">

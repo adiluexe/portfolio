@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Satoshi';
     src: url('~/assets/fonts/satoshi/Satoshi-Medium.otf') format('opentype');
@@ -34,4 +33,9 @@
 
 .font-spice-high {
     font-family: 'Centrion-High', sans-serif;
+}
+
+.adaptive-text {
+    color: white;
+    mix-blend-mode: exclusion;
 }

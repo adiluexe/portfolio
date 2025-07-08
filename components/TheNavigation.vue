@@ -34,7 +34,7 @@ const onContainerLeave = () => {
   // Animate ALL link text back to text color
   $gsap.to(navList.value.querySelectorAll('a'), {
     duration: 0.4,
-    color: '#161A30',
+    color: '#FFFFFF',
     ease: 'power3.in'
   });
 }
@@ -60,7 +60,7 @@ const onLinkLeave = (e) => {
 </script>
 
 <template>
-  <nav class="fixed inset-0 flex items-center justify-center z-40 pointer-events-none">
+  <nav class="fixed inset-0 flex items-center justify-center z-40 pointer-events-none adaptive-text">
     <!-- Animated Background Bar -->
     <div ref="navBg" class="absolute top-1/2 -translate-y-1/2 w-full h-24 bg-accent opacity-0 pointer-events-none z-0"></div>
 
