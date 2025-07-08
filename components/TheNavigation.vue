@@ -26,12 +26,14 @@ const onContainerEnter = () => {
 }
 
 const onContainerLeave = () => {
-  navEl.value.classList.add('adaptive-text')
   // Animate background bar to fade out
   $gsap.to(navBg.value, {
     duration: 0.4,
     opacity: 0,
-    ease: 'power3.in'
+    ease: 'power3.in',
+    onComplete: () => {
+      navEl.value.classList.add('adaptive-text')
+    }
   });
 
   // Animate ALL link text back to text color
