@@ -16,7 +16,18 @@
           
         </div>
         <div class="w-1/3 text-right tracking-tighter">
-          <span class="font-normal">VOL. 0</span>
+          <span class="font-normal hidden md:inline">VOL. 0</span>
+          <button
+            class="md:hidden inline-block p-2 focus:outline-none"
+            aria-label="Open menu"
+            @click="$emit('open-menu')"
+          >
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>

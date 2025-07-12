@@ -1,7 +1,7 @@
 <template>
   <div id="smooth-wrapper" class="font-satoshi bg-background text-text">
-    <TheHeader />
-    <TheNavigation />
+    <TheHeader @open-menu="menuOpen = true" />
+    <TheNavigation :menuOpen="menuOpen" @close-menu="menuOpen = false" />
     <main id="smooth-content" class="min-h-screen">
       <NuxtPage />
     </main>
@@ -9,9 +9,11 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 const gsap = useNuxtApp().$gsap;
 const ScrollSmoother = useNuxtApp().$ScrollSmoother;
+
+const menuOpen = ref(false)
 
 onMounted(() => {
   if (ScrollSmoother) {
