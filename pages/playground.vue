@@ -29,9 +29,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full min-h-screen flex flex-col justify-center text-center py-32 px-16">
+  <div class="w-full min-h-screen flex flex-col justify-center text-center py-16 md:py-24 lg:py-32 px-4 md:px-8 lg:px-0">
     <div ref="playgroundContent" class="w-full">
-      <h1 class="text-8xl font-normal uppercase tracking-tighter mb-16 font-satoshi"><span class="font-spice">P</span>layground</h1>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-normal uppercase tracking-tighter mb-8 md:mb-12 lg:mb-16 font-satoshi"><span class="font-spice">P</span>layground</h1>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
         <PlaygroundCard v-for="item in playgroundItems" :key="item.id" :playgroundItem="item" />
       </div>

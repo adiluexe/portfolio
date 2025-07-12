@@ -17,9 +17,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full min-h-screen flex flex-col items-center justify-center text-center py-32 tracking-tighter">
+  <div class="w-full min-h-screen flex flex-col items-center justify-center text-center py-16 md:py-24 lg:py-32 px-4 md:px-8 lg:px-0 tracking-tighter">
     <div ref="contactContent">
-      <h1 class="text-8xl font-normal uppercase mb-16 font-satoshi tracking-tighter"><span class="font-spice">C</span>ontact</h1>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-normal uppercase mb-8 md:mb-12 lg:mb-16 font-satoshi tracking-tighter"><span class="font-spice">C</span>ontact</h1>
       <div class="bg-primary w-full max-w-2xl h-64 mb-8"></div>
       <div class="text-center mb-8">
         <p class="text-2xl uppercase ">Let's collaborate</p>
