@@ -79,18 +79,8 @@ const closeMenu = () => {
     <transition name="fade">
       <div
         v-if="props.menuOpen"
-        class="fixed inset-0 bg-accent flex flex-col justify-center items-center text-center z-40"
+        class="fixed inset-0 bg-accent flex flex-col justify-center items-center text-center z-30"
       >
-        <button
-          class="absolute top-8 right-8 z-50 p-2 focus:outline-none"
-          @click="closeMenu"
-          aria-label="Close menu"
-        >
-          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="6" y1="18" x2="18" y2="6" />
-          </svg>
-        </button>
         <ul class="space-y-10 text-4xl md:text-5xl font-normal uppercase tracking-tighter text-background">
           <li>
             <NuxtLink to="/works" @click="closeMenu">

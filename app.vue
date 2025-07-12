@@ -1,6 +1,6 @@
 <template>
   <div id="smooth-wrapper" class="font-satoshi bg-background text-text">
-    <TheHeader @open-menu="menuOpen = true" />
+    <TheHeader :menuOpen="menuOpen" @toggle-menu="menuOpen = !menuOpen" />
     <TheNavigation :menuOpen="menuOpen" @close-menu="menuOpen = false" />
     <main id="smooth-content" class="min-h-screen">
       <NuxtPage />

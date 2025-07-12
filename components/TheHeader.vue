@@ -18,14 +18,16 @@
         <div class="w-1/3 text-right tracking-tighter">
           <span class="font-normal hidden md:inline">VOL. 0</span>
           <button
-            class="md:hidden inline-block p-2 focus:outline-none"
-            aria-label="Open menu"
-            @click="$emit('open-menu')"
+            class="md:hidden inline-block p-2 focus:outline-none z-50"
+            aria-label="Toggle menu"
+            @click="emit('toggle-menu')"
           >
-            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <line x1="4" y1="7" x2="20" y2="7" />
-              <line x1="4" y1="12" x2="20" y2="12" />
-              <line x1="4" y1="17" x2="20" y2="17" />
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="text-background">
+              <line v-if="!props.menuOpen" x1="4" y1="7" x2="20" y2="7" />
+              <line v-if="!props.menuOpen" x1="4" y1="12" x2="20" y2="12" />
+              <line v-if="!props.menuOpen" x1="4" y1="17" x2="20" y2="17" />
+              <line v-if="props.menuOpen" x1="6" y1="6" x2="18" y2="18" />
+              <line v-if="props.menuOpen" x1="6" y1="18" x2="18" y2="6" />
             </svg>
           </button>
         </div>
@@ -33,3 +35,11 @@
     </div>
   </header>
 </template>
+
+<script setup>
+import { defineProps, defineEmits } from 'vue'
+const props = defineProps({
+  menuOpen: Boolean
+})
+const emit = defineEmits(['open-menu', 'toggle-menu'])
+</script>
