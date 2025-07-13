@@ -74,12 +74,12 @@ const closeMenu = () => {
 </script>
 
 <template>
-  <nav ref="navEl" class="fixed inset-0 z-40">
+  <nav ref="navEl" class="fixed inset-0 z-40 pointer-events-none">
     <!-- Overlay Menu (tablet/mobile) -->
     <transition name="fade">
       <div
         v-if="props.menuOpen"
-        class="fixed inset-0 bg-accent flex flex-col justify-center items-center text-center z-30"
+        class="fixed inset-0 bg-accent flex flex-col justify-center items-center text-center z-30 pointer-events-auto"
       >
         <ul class="space-y-10 text-4xl md:text-5xl font-normal uppercase tracking-tighter text-background">
           <li>
@@ -113,7 +113,7 @@ const closeMenu = () => {
     <!-- Desktop Navigation (centered) -->
     <div class="hidden md:flex items-center justify-center w-full h-full pointer-events-none">
       <div ref="navBg" class="absolute top-1/2 -translate-y-1/2 w-full h-24 bg-accent opacity-0 pointer-events-none z-0"></div>
-      <div @mouseenter="onContainerEnter" @mouseleave="onContainerLeave" class="relative w-full pointer-events-auto">
+      <div @mouseenter="onContainerEnter" @mouseleave="onContainerLeave" class="relative pointer-events-auto w-full">
         <ul ref="navList" class="flex items-center justify-around uppercase text-sm tracking-tighter">
           <li @mouseenter="onLinkEnter" @mouseleave="onLinkLeave">
             <NuxtLink to="/about" class="block p-4 pointer-events-auto text-left">

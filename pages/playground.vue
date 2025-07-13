@@ -25,7 +25,7 @@ const playgroundItems = ref([
     type: 'video',
     src: '/videos/bluehair.mp4',
     poster: '/images/Blue Hair-thumb.jpg',
-    postUrl: 'https://www.instagram.com/p/YOUR_POST_ID/', // Replace with actual URL
+    postUrl: 'https://www.instagram.com/p/C9UlcOCPpk1/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', // Replace with actual URL
     link: true 
   },
   { 
