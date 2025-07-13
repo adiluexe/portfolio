@@ -21,6 +21,15 @@ const playgroundContent = ref(null)
 const playgroundItems = ref([
   { 
     id: 1, 
+    name: 'BLUE HAIR', 
+    type: 'video',
+    src: '/videos/bluehair.mp4',
+    poster: '/images/Blue Hair-thumb.jpg',
+    postUrl: 'https://www.instagram.com/p/YOUR_POST_ID/', // Replace with actual URL
+    link: true 
+  },
+  { 
+    id: 2, 
     name: 'BREAKING BAD', 
     type: 'video',
     src: '/videos/breaking_bad.mp4',
@@ -29,7 +38,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 2, 
+    id: 3, 
     name: 'CHANGE OF HEART', 
     type: 'video',
     src: '/videos/change_of_heart.mp4',
@@ -38,7 +47,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 3, 
+    id: 4, 
     name: 'CLOUDS', 
     type: 'video',
     src: '/videos/clouds.mp4',
@@ -47,7 +56,16 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 4, 
+    id: 5, 
+    name: 'COMETHRU', 
+    type: 'video',
+    src: '/videos/comethru.mp4',
+    poster: '/images/0.45 comethru_1-thumb.jpg',
+    postUrl: 'https://www.instagram.com/p/YOUR_POST_ID/', // Replace with actual URL
+    link: true 
+  },
+  { 
+    id: 6, 
     name: 'FE!N', 
     type: 'video',
     src: '/videos/fein.mp4',
@@ -56,7 +74,25 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 5, 
+    id: 7, 
+    name: 'FROM THE START', 
+    type: 'video',
+    src: '/videos/from_the_start.mp4',
+    poster: '/images/0.42 From The Start-thumb.jpg',
+    postUrl: 'https://www.instagram.com/p/YOUR_POST_ID/', // Replace with actual URL
+    link: true 
+  },
+  { 
+    id: 8, 
+    name: 'GABI', 
+    type: 'video',
+    src: '/videos/gabi.mp4',
+    poster: '/images/FULL 0.15 Gabi-thumb.jpg',
+    postUrl: 'https://www.instagram.com/p/YOUR_POST_ID/', // Replace with actual URL
+    link: true 
+  },
+  { 
+    id: 9, 
     name: 'GKYAM', 
     type: 'video',
     src: '/videos/gkyam.mp4',
@@ -65,7 +101,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 6, 
+    id: 10, 
     name: 'IDILY', 
     type: 'video',
     src: '/videos/idily.mp4',
@@ -74,7 +110,16 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 7, 
+    id: 11, 
+    name: 'KALAWAKAN', 
+    type: 'video',
+    src: '/videos/kalawakan.mp4',
+    poster: '/images/0.37 IG-thumb.jpg',
+    postUrl: 'https://www.instagram.com/p/YOUR_POST_ID/', // Replace with actual URL
+    link: true 
+  },
+  { 
+    id: 12, 
     name: 'LEONORA', 
     type: 'video',
     src: '/videos/leonora.mp4',
@@ -83,7 +128,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 8, 
+    id: 13, 
     name: 'LOOK BACK', 
     type: 'video',
     src: '/videos/look_back.mp4',
@@ -92,7 +137,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 9, 
+    id: 14, 
     name: 'MISS MOSH', 
     type: 'video',
     src: '/videos/miss_mosh.mp4',
@@ -101,7 +146,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 10, 
+    id: 15, 
     name: 'MIXED PERSONALITIES', 
     type: 'video',
     src: '/videos/mixed_personalities.mp4',
@@ -110,7 +155,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 11, 
+    id: 16, 
     name: 'NANG TAHIMIK', 
     type: 'video',
     src: '/videos/nang_tahimik.mp4',
@@ -119,7 +164,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 12, 
+    id: 17, 
     name: 'NGAYON KAYA', 
     type: 'video',
     src: '/videos/ngayon_kaya.mp4',
@@ -128,7 +173,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 13, 
+    id: 18, 
     name: 'NO SURPRISES', 
     type: 'video',
     src: '/videos/no_surprises.mp4',
@@ -137,16 +182,16 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 14, 
+    id: 19, 
     name: 'PEKLAT CREAM', 
     type: 'video',
     src: '/videos/peklat_cream.mp4',
-    poster: '/images/0.32-thumb.jpg', // Using a generic thumb, update if specific one exists
+    poster: '/images/0.32-thumb.jpg',
     postUrl: 'https://www.instagram.com/p/YOUR_POST_ID/', // Replace with actual URL
     link: true 
   },
   { 
-    id: 15, 
+    id: 20, 
     name: 'PRETTY BOY', 
     type: 'video',
     src: '/videos/Pretty Boy-optimized.mp4',
@@ -155,7 +200,25 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 16, 
+    id: 21, 
+    name: 'SEGURISTA', 
+    type: 'video',
+    src: '/videos/segurista.mp4',
+    poster: '/images/0.40-thumb.jpg',
+    postUrl: 'https://www.instagram.com/p/YOUR_POST_ID/', // Replace with actual URL
+    link: true 
+  },
+  { 
+    id: 22, 
+    name: 'SHOT PUNO', 
+    type: 'video',
+    src: '/videos/shot_puno.mp4',
+    poster: '/images/0.41-thumb.jpg',
+    postUrl: 'https://www.instagram.com/p/YOUR_POST_ID/', // Replace with actual URL
+    link: true 
+  },
+  { 
+    id: 23, 
     name: 'SINCERITY', 
     type: 'video',
     src: '/videos/sincerity.mp4',
@@ -164,7 +227,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 17, 
+    id: 24, 
     name: 'SISIKAT KA IHA', 
     type: 'video',
     src: '/videos/sisikat_ka_iha.mp4',
@@ -173,7 +236,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 18, 
+    id: 25, 
     name: 'TRAINGAZING', 
     type: 'video',
     src: '/videos/traingazing.mp4',
@@ -182,7 +245,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 19, 
+    id: 26, 
     name: 'WALL-E', 
     type: 'video',
     src: '/videos/walle.mp4',
@@ -191,7 +254,7 @@ const playgroundItems = ref([
     link: true 
   },
   { 
-    id: 20, 
+    id: 27, 
     name: 'WALTZ OF FOUR LEFT FEET', 
     type: 'video',
     src: '/videos/waltz_of_four_left_feet.mp4',
