@@ -1,6 +1,19 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
+// SEO Meta Tags for Works Page
+useSeoMeta({
+  title: 'Works - Exequel Adizon',
+  description: 'Explore the creative works and projects by Exequel Adizon (@adiluexe). From web development to mobile apps, discover innovative digital solutions and creative projects.',
+  ogTitle: 'Works - Exequel Adizon',
+  ogDescription: 'Explore the creative works and projects by Exequel Adizon (@adiluexe). From web development to mobile apps, discover innovative digital solutions and creative projects.',
+  ogImage: '/images/og-image.jpg',
+  twitterTitle: 'Works - Exequel Adizon',
+  twitterDescription: 'Explore the creative works and projects by Exequel Adizon (@adiluexe). From web development to mobile apps, discover innovative digital solutions and creative projects.',
+  twitterImage: '/images/og-image.jpg',
+  twitterCard: 'summary_large_image'
+})
+
 const { $gsap } = useNuxtApp()
 
 const worksContent = ref(null)

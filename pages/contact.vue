@@ -1,6 +1,19 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
+// SEO Meta Tags for Contact Page
+useSeoMeta({
+  title: 'Contact - Exequel Adizon',
+  description: 'Get in touch with Exequel Adizon (@adiluexe). Ready to collaborate on your next project? Let\'s create something amazing together.',
+  ogTitle: 'Contact - Exequel Adizon',
+  ogDescription: 'Get in touch with Exequel Adizon (@adiluexe). Ready to collaborate on your next project? Let\'s create something amazing together.',
+  ogImage: '/images/og-image.jpg',
+  twitterTitle: 'Contact - Exequel Adizon',
+  twitterDescription: 'Get in touch with Exequel Adizon (@adiluexe). Ready to collaborate on your next project? Let\'s create something amazing together.',
+  twitterImage: '/images/og-image.jpg',
+  twitterCard: 'summary_large_image'
+})
+
 const { $gsap } = useNuxtApp()
 
 const contactContent = ref(null)

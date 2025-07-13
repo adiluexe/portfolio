@@ -1,6 +1,19 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
+// SEO Meta Tags for Playground Page
+useSeoMeta({
+  title: 'Playground - Exequel Adizon',
+  description: 'Discover experimental projects and creative explorations by Exequel Adizon (@adiluexe). A collection of innovative digital experiments and artistic endeavors.',
+  ogTitle: 'Playground - Exequel Adizon',
+  ogDescription: 'Discover experimental projects and creative explorations by Exequel Adizon (@adiluexe). A collection of innovative digital experiments and artistic endeavors.',
+  ogImage: '/images/og-image.jpg',
+  twitterTitle: 'Playground - Exequel Adizon',
+  twitterDescription: 'Discover experimental projects and creative explorations by Exequel Adizon (@adiluexe). A collection of innovative digital experiments and artistic endeavors.',
+  twitterImage: '/images/og-image.jpg',
+  twitterCard: 'summary_large_image'
+})
+
 const { $gsap } = useNuxtApp()
 
 const playgroundContent = ref(null)

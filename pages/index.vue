@@ -1,6 +1,19 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
+// SEO Meta Tags for Home Page
+useSeoMeta({
+  title: 'Exequel Adizon - Creative Developer & Designer',
+  description: 'Exequel Adizon (@adiluexe) is a designer and developer based in Taguig, Philippines. Passionate about crafting seamless and captivating digital experiences from design to code.',
+  ogTitle: 'Exequel Adizon - Creative Developer & Designer',
+  ogDescription: 'Exequel Adizon (@adiluexe) is a designer and developer based in Taguig, Philippines. Passionate about crafting seamless and captivating digital experiences from design to code.',
+  ogImage: '/images/og-image.jpg',
+  twitterTitle: 'Exequel Adizon - Creative Developer & Designer',
+  twitterDescription: 'Exequel Adizon (@adiluexe) is a designer and developer based in Taguig, Philippines. Passionate about crafting seamless and captivating digital experiences from design to code.',
+  twitterImage: '/images/og-image.jpg',
+  twitterCard: 'summary_large_image'
+})
+
 const { $gsap } = useNuxtApp()
 
 const heroTitle = ref(null)

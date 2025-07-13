@@ -1,6 +1,19 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
+// SEO Meta Tags for About Page
+useSeoMeta({
+  title: 'About - Exequel Adizon',
+  description: 'Learn more about Exequel Adizon (@adiluexe), a creative developer and designer from Taguig, Philippines. Discover my journey, skills, and passion for digital experiences.',
+  ogTitle: 'About - Exequel Adizon',
+  ogDescription: 'Learn more about Exequel Adizon (@adiluexe), a creative developer and designer from Taguig, Philippines. Discover my journey, skills, and passion for digital experiences.',
+  ogImage: '/images/og-image.jpg',
+  twitterTitle: 'About - Exequel Adizon',
+  twitterDescription: 'Learn more about Exequel Adizon (@adiluexe), a creative developer and designer from Taguig, Philippines. Discover my journey, skills, and passion for digital experiences.',
+  twitterImage: '/images/og-image.jpg',
+  twitterCard: 'summary_large_image'
+})
+
 const { $gsap } = useNuxtApp()
 
 const aboutContent = ref(null)
