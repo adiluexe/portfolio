@@ -44,13 +44,13 @@
       </div>
 
       <!-- Platform indicator (top right) -->
-      <div 
+      <!-- <div 
         v-if="playgroundItem.postUrl && playgroundItem.postUrl !== 'https://www.instagram.com/p/YOUR_POST_ID/' && !playgroundItem.postUrl.includes('YOUR_VIDEO_ID')" 
         class="absolute top-3 right-3 opacity-70 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
       >
         <Icon name="mdi:instagram" v-if="playgroundItem.postUrl.includes('instagram')" class="text-white text-lg" />
         <Icon name="mdi:music-note" v-else-if="playgroundItem.postUrl.includes('tiktok')" class="text-white text-lg" />
-      </div>
+      </div> -->
     </div>
 
     <!-- Instagram Embed (Lazy Loaded) -->
