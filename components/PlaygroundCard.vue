@@ -1,8 +1,8 @@
 <template>
-  <div class="group w-full block">
+  <div class="group w-full block cursor-hover">
     
     <!-- Video Content -->
-    <div v-if="playgroundItem.type === 'video'" class="bg-primary w-full aspect-[4/5] mb-4 overflow-hidden relative">
+    <div v-if="playgroundItem.type === 'video'" class="bg-primary w-full aspect-[4/5] mb-4 overflow-hidden rounded-lg relative cursor-hover">
       <!-- Clickable overlay for the entire video -->
       <a 
         v-if="playgroundItem.postUrl && playgroundItem.postUrl !== 'https://www.instagram.com/p/YOUR_POST_ID/' && !playgroundItem.postUrl.includes('YOUR_VIDEO_ID')"

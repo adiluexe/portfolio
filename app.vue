@@ -5,6 +5,7 @@
     <main id="smooth-content" class="min-h-screen">
       <NuxtPage />
     </main>
+    <CustomCursor />
   </div>
 </template>
 

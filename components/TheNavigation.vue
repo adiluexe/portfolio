@@ -116,25 +116,25 @@ const closeMenu = () => {
       <div @mouseenter="onContainerEnter" @mouseleave="onContainerLeave" class="relative pointer-events-auto w-full">
         <ul ref="navList" class="flex items-center justify-around uppercase text-sm tracking-tighter">
           <li @mouseenter="onLinkEnter" @mouseleave="onLinkLeave">
-            <NuxtLink to="/about" class="block p-4 pointer-events-auto text-left">
+            <NuxtLink to="/about" class="block p-4 pointer-events-auto text-left cursor-hover">
               <span class="block text-xs font-normal">01</span>
               <span class="font-spice">A</span>bout
             </NuxtLink>
           </li>
           <li @mouseenter="onLinkEnter" @mouseleave="onLinkLeave">
-            <NuxtLink to="/works" class="block p-4 pointer-events-auto text-left">
+            <NuxtLink to="/works" class="block p-4 pointer-events-auto text-left cursor-hover">
               <span class="block text-xs font-normal">02</span>
               <span class="font-spice">W</span>orks
             </NuxtLink>
           </li>
           <li @mouseenter="onLinkEnter" @mouseleave="onLinkLeave">
-            <NuxtLink to="/contact" class="block p-4 pointer-events-auto text-left">
+            <NuxtLink to="/contact" class="block p-4 pointer-events-auto text-left cursor-hover">
               <span class="block text-xs font-normal">03</span>
               <span class="font-spice">C</span>ontact
             </NuxtLink>
           </li>
           <li @mouseenter="onLinkEnter" @mouseleave="onLinkLeave">
-            <NuxtLink to="/playground" class="block p-4 pointer-events-auto text-left">
+            <NuxtLink to="/playground" class="block p-4 pointer-events-auto text-left cursor-hover">
               <span class="block text-xs font-normal">04</span>
               <span class="font-spice">P</span>layground
             </NuxtLink>
