@@ -18,7 +18,9 @@ const { $gsap } = useNuxtApp()
 
 const contactContent = ref(null)
 const titleTextRef = ref(null)
+const adjectiveRef = ref(null)
 let morphTimeline = null
+let adjectiveTimeline = null
 
 const texts = [
   '<span class="font-spice">C</span>ontact',
@@ -26,6 +28,45 @@ const texts = [
   '<span class="font-spice">G</span>et In <span class="font-spice">T</span>ouch'
 ]
 let currentIndex = 0
+
+const adjectives = [
+  'amazing',
+  'incredible',
+  'extraordinary',
+  'beautiful',
+  'innovative',
+  'remarkable',
+  'exceptional',
+  'outstanding'
+]
+let adjectiveIndex = 0
+
+const startAdjectiveCycle = () => {
+  if (adjectiveTimeline) adjectiveTimeline.kill()
+  
+  adjectiveTimeline = $gsap.timeline({ repeat: -1 })
+  
+  adjectiveTimeline
+    .to({}, { duration: 2 }) // Hold for 2 seconds
+    .add(() => {
+      adjectiveIndex = (adjectiveIndex + 1) % adjectives.length
+    })
+    .to(adjectiveRef.value, {
+      duration: 0.2,
+      opacity: 0,
+      y: -10,
+      ease: 'power2.inOut'
+    })
+    .call(() => {
+      adjectiveRef.value.textContent = adjectives[adjectiveIndex]
+    })
+    .to(adjectiveRef.value, {
+      duration: 0.3,
+      opacity: 1,
+      y: 0,
+      ease: 'power2.out'
+    })
+}
 
 const startMorphEffect = () => {
   if (morphTimeline) morphTimeline.kill()
@@ -105,6 +146,11 @@ onMounted(() => {
     stagger: 0.1,
     ease: 'power4.out',
   })
+  
+  // Start adjective cycling after initial animation
+  setTimeout(() => {
+    startAdjectiveCycle()
+  }, 1500)
 })
 </script>
 
@@ -118,18 +164,58 @@ onMounted(() => {
       >
         <span ref="titleTextRef"><span class="font-spice">C</span>ontact</span>
       </h1>
-      <div class="bg-primary w-full max-w-2xl h-64 mb-8"></div>
-      <div class="text-center mb-8">
-        <p class="text-2xl uppercase ">Let's collaborate</p>
-        <p class="text-2xl uppercase ">and make something together</p>
+
+      <div class="text-center mb-4 text-lg uppercase">
+        <Icon name="custom:adiluexe-logo" class="block mb-4 mx-auto text-sm animate-bounce" />
+        <p class="">Let's collaborate</p>
+        <p class="">and build something <span ref="adjectiveRef" class="font-bold">amazing</span> together</p>
       </div>
-      <div class="w-px h-16 bg-text mx-auto mb-8"></div>
-      <div class="text-center mb-8">
-        <p class="text-3xl">EXEQUEL.ADIZON@GMAIL.COM</p>
-        <p class="text-3xl"><a href="https://github.com/adiluexe" target="_blank">GITHUB</a> / <a href="https://www.linkedin.com/in/exequel-adizon/" target="_blank">LINKEDIN</a></p>
+      <div class="w-px h-72 bg-text mx-auto mb-8"></div>
+      <div class="text-center mb-4">
+        <a 
+          href="mailto:exequel.adizon@gmail.com"
+          class="group relative inline-flex items-center gap-2 cursor-hover transition-all duration-300 mb-4"
+        >
+          <span class="relative group-hover:text-primary transition-colors duration-300 text-6xl">
+            EXEQUEL.ADIZON@GMAIL.COM
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full"></span>
+          </span>
+          <svg class="w-6 h-6 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
+          </svg>
+        </a>
+        <div class="flex items-center justify-center gap-4 text-6xl">
+          <a 
+            href="https://github.com/adiluexe" 
+            target="_blank"
+            class="group relative flex items-center gap-2 cursor-hover transition-all duration-300"
+          >
+            <span class="relative group-hover:text-primary transition-colors duration-300">
+              GITHUB
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full"></span>
+            </span>
+            <svg class="w-6 h-6 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
+            </svg>
+          </a>
+          <span class="text-6xl font-satoshi">/</span>
+          <a 
+            href="https://www.linkedin.com/in/exequel-adizon/" 
+            target="_blank"
+            class="group relative flex items-center gap-2 cursor-hover transition-all duration-300"
+          >
+            <span class="relative group-hover:text-primary transition-colors duration-300">
+              LINKEDIN
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full"></span>
+            </span>
+            <svg class="w-6 h-6 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
+            </svg>
+          </a>
+        </div>
       </div>
-      <div class="w-px h-16 bg-text mx-auto mb-8"></div>
-      <div class="bg-primary w-full max-w-2xl h-64"></div>
+      <!-- <div class="w-px h-32 bg-text mx-auto mb-8"></div> -->
+      
     </div>
   </div>
 </template>
