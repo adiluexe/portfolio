@@ -3,6 +3,16 @@
     
     <!-- Video Content -->
     <div v-if="playgroundItem.type === 'video'" class="bg-primary w-full aspect-[4/5] mb-4 overflow-hidden rounded-lg relative">
+      <!-- Clickable overlay for the entire video -->
+      <a 
+        v-if="playgroundItem.postUrl && playgroundItem.postUrl !== 'https://www.instagram.com/p/YOUR_POST_ID/' && !playgroundItem.postUrl.includes('YOUR_VIDEO_ID')"
+        :href="playgroundItem.postUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="absolute inset-0 z-10 cursor-pointer"
+        :title="`View ${playgroundItem.name} on ${playgroundItem.postUrl.includes('instagram') ? 'Instagram' : 'TikTok'}`"
+      ></a>
+
       <video 
         :poster="playgroundItem.poster"
         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -16,16 +26,30 @@
         <source :src="playgroundItem.src" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <!-- Play overlay -->
-      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <Icon name="mdi:play-circle-outline" class="text-white text-4xl" />
+      
+      <!-- Play/External link overlay -->
+      <div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center pointer-events-none">
+        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center space-x-2">
+          <Icon 
+            :name="playgroundItem.postUrl && playgroundItem.postUrl !== 'https://www.instagram.com/p/YOUR_POST_ID/' && !playgroundItem.postUrl.includes('YOUR_VIDEO_ID') ? 'mdi:external-link' : 'mdi:play-circle-outline'" 
+            class="text-white text-4xl" 
+          />
+          <span 
+            v-if="playgroundItem.postUrl && playgroundItem.postUrl !== 'https://www.instagram.com/p/YOUR_POST_ID/' && !playgroundItem.postUrl.includes('YOUR_VIDEO_ID')"
+            class="text-white text-sm font-medium uppercase"
+          >
+            View on {{ playgroundItem.postUrl.includes('instagram') ? 'Instagram' : 'TikTok' }}
+          </span>
         </div>
       </div>
-      <!-- Post URL indicator (smaller, less prominent) -->
-      <div v-if="playgroundItem.postUrl" class="absolute top-3 right-3 opacity-50 group-hover:opacity-70 transition-opacity duration-300">
-        <Icon name="mdi:instagram" v-if="playgroundItem.postUrl.includes('instagram')" class="text-white text-sm" />
-        <Icon name="mdi:music-note" v-else-if="playgroundItem.postUrl.includes('tiktok')" class="text-white text-sm" />
+
+      <!-- Platform indicator (top right) -->
+      <div 
+        v-if="playgroundItem.postUrl && playgroundItem.postUrl !== 'https://www.instagram.com/p/YOUR_POST_ID/' && !playgroundItem.postUrl.includes('YOUR_VIDEO_ID')" 
+        class="absolute top-3 right-3 opacity-70 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+      >
+        <Icon name="mdi:instagram" v-if="playgroundItem.postUrl.includes('instagram')" class="text-white text-lg" />
+        <Icon name="mdi:music-note" v-else-if="playgroundItem.postUrl.includes('tiktok')" class="text-white text-lg" />
       </div>
     </div>
 
