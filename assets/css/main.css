@@ -39,3 +39,14 @@
     color: white;
     mix-blend-mode: difference;
 }
+
+/* Global cursor hiding for custom cursor implementation */
+.cursor-hover,
+a, 
+button, 
+[role="button"],
+video,
+.video-overlay,
+.playground-card {
+    cursor: none !important;
+}
