@@ -98,12 +98,66 @@ const stopMorphEffect = () => {
 }
 
 const projects = ref([
-  { id: 1, name: 'PORTFOLIO', stack: 'NUXT.JS / VUE.JS / GSAP' },
-  { id: 2, name: 'HERONFIT', stack: 'FLUTTER / NEXT.JS / REACT / SUPABASE / FLASK' },
-  { id: 3, name: 'ALARP', stack: 'FLUTTER / SUPABASE / CUSTOMPAINT / FLUTTER3D' },
-  { id: 4, name: 'SNAPGRADE', stack: 'NEXT.JS / REACT / SPRINGBOOT' },
-  { id: 5, name: 'BATHALA', stack: 'GODOT' },
-  { id: 6, name: '[YOUR PROJECT HERE]', stack: '' }
+  { 
+    id: 1, 
+    name: 'PORTFOLIO', 
+    description: 'Personal portfolio website showcasing my journey as a creative developer',
+    stack: 'NUXT.JS / VUE.JS / GSAP / TAILWIND',
+    image: '/works/adiluexe.png',
+    github: 'https://github.com/adiluexe/portfolio',
+    website: 'https://exequeladizon.com',
+    type: 'Web Development'
+  },
+  { 
+    id: 2, 
+    name: 'HERONFIT', 
+    description: 'Comprehensive fitness tracking mobile app with AI-powered workout recommendations',
+    stack: 'FLUTTER / NEXT.JS / REACT / SUPABASE / FLASK',
+    image: '/works/heronfit.png',
+    github: 'https://github.com/adiluexe/heronfit',
+    website: null, // Mobile app - no website
+    type: 'Mobile Development'
+  },
+  { 
+    id: 3, 
+    name: 'ALARP', 
+    description: 'Interactive alarm app with custom UI animations and 3D elements',
+    stack: 'FLUTTER / SUPABASE / CUSTOMPAINT / FLUTTER3D',
+    image: '/works/alarp.png',
+    github: 'https://github.com/adiluexe/alarp',
+    website: null, // Mobile app - no website
+    type: 'Mobile Development'
+  },
+  { 
+    id: 4, 
+    name: 'SNAPGRADE', 
+    description: 'AI-powered grading system that automatically evaluates student submissions',
+    stack: 'NEXT.JS / REACT / SPRINGBOOT / AI/ML',
+    image: '/works/snapgrade.png',
+    github: 'https://github.com/adiluexe/snapgrade',
+    website: 'https://snapgrade.vercel.app',
+    type: 'Web Development'
+  },
+  { 
+    id: 5, 
+    name: 'BATHALA', 
+    description: 'Filipino mythology-inspired indie game built with Godot engine',
+    stack: 'GODOT / GDSCRIPT / GAME DESIGN',
+    image: '/images/bluehair.jpg', // Placeholder until you have the actual image
+    github: 'https://github.com/adiluexe/bathala',
+    website: null, // Game - no website
+    type: 'Game Development'
+  },
+  { 
+    id: 6, 
+    name: 'LET\'S WORK TOGETHER', 
+    description: 'Have a project in mind? Let\'s collaborate and create something amazing',
+    stack: 'YOUR IDEAS + MY SKILLS',
+    image: null, // Special case for collaboration card
+    github: null,
+    website: 'mailto:exequel.adizon@gmail.com',
+    type: 'Collaboration'
+  }
 ])
 
 onMounted(() => {
@@ -128,9 +182,7 @@ onMounted(() => {
         <span ref="titleTextRef"><span class="font-spice">W</span>orks</span>
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 p-8">
-        <NuxtLink v-for="project in projects" :key="project.id" :to="`/works/${project.id}`">
-          <ProjectCard :project="project" />
-        </NuxtLink>
+        <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
       </div>
     </div>
   </div>
