@@ -3,9 +3,9 @@
     <!-- Project Image Container -->
     <div class="relative w-full aspect-[16/9] mb-4 overflow-hidden bg-background shadow-md border-1 rounded-md">
       <!-- Special case for collaboration card -->
-      <div v-if="project.type === 'Collaboration'" class="w-full h-full flex flex-col items-center justify-center bg-accent text-background uppercase">
+      <div v-if="project.type === 'Collaboration'" class="w-full h-full flex flex-col items-center justify-center bg-primary text-background uppercase">
         <Icon name="custom:adiluexe-logo" class="text-6xl mb-4 animate-spin-slow" />
-        <h3 class="text-4xl font-bold tracking-tight">Let's Work</h3>
+        <h3 class="text-4xl font-medium tracking-tight"><span class="font-spice">L</span>et's <span class="font-spice">W</span>ork</h3>
         <p class="text-md mt-2 opacity-80">Ready for your next project?</p>
       </div>
       
@@ -18,7 +18,7 @@
       />
       
       <!-- Hover Overlay with Actions -->
-      <div class="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-4">
+      <div class="absolute inset-0 bg-accent/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-4">
         <!-- Project Type Badge -->
         <span class="bg-background text-primary px-3 py-1 text-xs uppercase font-bold tracking-wider rounded-full">
           {{ project.type }}
@@ -62,16 +62,19 @@
             </svg>
           </a>
           
-          <!-- Mobile App Badge (when no website) -->
-          <div 
-            v-else-if="project.type.includes('Mobile')"
-            class="flex items-center justify-center w-12 h-12 bg-background/20 border-2 border-background/30 text-background rounded-full cursor-not-allowed"
-            title="Mobile App"
+          <!-- Mobile App Download (GitHub Releases) -->
+          <a 
+            v-else-if="project.type.includes('Mobile') && project.github"
+            :href="project.github + '/releases'" 
+            target="_blank"
+            class="group/btn relative cursor-hover flex items-center justify-center w-12 h-12 bg-transparent border-2 border-background text-background hover:bg-background hover:text-primary transition-all duration-300 rounded-full"
+            @click.stop
+            title="Download App"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21C5,22.11 5.89,23 7,23H17C18.11,23 19,22.11 19,21V3C19,1.89 18.11,1 17,1Z" />
             </svg>
-          </div>
+          </a>
         </div>
       </div>
     </div>
