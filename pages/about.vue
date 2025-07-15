@@ -123,35 +123,35 @@ onMounted(() => {
       <div class="max-w-4xl text-md space-y-6 mb-4 tracking-tight text-center uppercase">
         <div>
           <h2 class="text-2xl font-bold mb-4 uppercase">ABOUT ME</h2>
-          <p>Hi, I'm Exequel Adizon! I'm currently an incoming fourth-year Computer Science student with a keen interest in both design and development. I'm exploring career paths as a UI/UX Designer and Full-stack Developer.</p>
+          <p><span>Hi, I'm Exequel Adizon</span>! I'm currently an incoming fourth-year <span>Computer Science student</span> with a <span>keen interest in both design and development</span>. I'm exploring career paths as a <span>UI/UX Designer and Full-stack Developer.</span></p>
         </div>
 
         <div>
           <h3 class="text-2xl font-bold mb-4 uppercase">My Journey into Design</h3>
-          <p class="mb-4">My passion for design actually started with a love for drawing when I was young, which naturally led me to more creative pursuits. I delved into editing early on, experimenting with tools like Pizap, PicsArt, and Canva, before eventually mastering professional software like Adobe Photoshop, Illustrator, and Figma.</p>
+          <p class="mb-4">My passion for design actually started with a love for drawing when I was young, which naturally led me to more creative pursuits. I delved into editing early on, experimenting with tools like Pizap, PicsArt, and Canva, before eventually mastering <span>professional software like Adobe Photoshop, Illustrator, and Figma.</span></p>
           
-          <p class="mb-4">I entered the design field quite early. In high school, I was already editing posts and graphics for various Facebook pages. This led to my role as the layout artist for our school's English journalism publication, "The Masonry," where our newspaper proudly won several awards at the DSPC and RSPC in 2019.</p>
+          <p class="mb-4">I entered the design field quite early. In high school, I was already editing posts and graphics for various Facebook pages. This led to my role as the <span>layout artist</span> for our <span>school's English journalism publication, "The Masonry,"</span> where our newspaper proudly <span>won several awards at the DSPC and RSPC in 2019.</span></p>
           
-          <p class="mb-4">In university, I had the honor of being the inaugural Head of Graphics for Fortem Ardeas Esports, the University of Makati's premier esports organization. There, I established the brand identity and managed a vast array of graphics, from live broadcast visuals to real-time graphic edits. I also created deliverables for internal events and collaborated with prominent esports brands such as Moonton Philippines, AcadArena, and Tier One Entertainment.</p>
+          <p class="mb-4">In university, I had the honor of being the inaugural <span>Head of Graphics for Fortem Ardeas Esports</span>, the University of Makati's premier esports organization. There, I <span>established the brand identity and managed a vast array of graphics</span>, from live broadcast visuals to real-time graphic edits. I also created deliverables for internal events and <span>collaborated with prominent esports brands such as Moonton Philippines, AcadArena, and Tier One Entertainment.</span></p>
 
           <p>
-            Around this time, I was also taking on freelance design projects alongside my organizational work. The money was good, but I eventually hit a burnout; designing wasn't fun anymore, and I started losing interest. This experience led me to create an account purely for posting whatever I wanted to create. This proved to be a very therapeutic process, giving me the confidence I needed to fall back in love with design. The works you see in my "playground" section are all from that account, which amassed over 1 million views and half a million likes in just a month of posting. Although I've stopped posting on that account to focus on more programming related activities, I'm incredibly grateful for that experience and aspire to replicate its success someday.
+            Around this time, I was also <span>taking on freelance design projects</span> alongside my organizational work. The money was good, but I eventually hit a <span>burnout</span>; designing wasn't fun anymore, and I started losing interest. This experience led me to create an account purely for posting whatever I wanted to create. This proved to be a very therapeutic process, giving me the confidence I needed to fall back in love with design. The works you see in my "playground" section are all from that account, which <span>amassed over 1 million views and half a million likes</span> in just a month of posting. Although I've stopped posting on that account to focus on more programming related activities, I'm incredibly grateful for that experience and aspire to replicate its success someday.
           </p>
         </div>
 
         <div>
           <h3 class="text-2xl font-bold mb-4 uppercase">My Exploration into Development</h3>
-          <p class="mb-4">I first discovered programming in 9th grade during my ICT classes, where I learned to build websites using HTML, CSS, and JavaScript. That same year, I was also the programmer for our school's robotics team, where we even won first place in the VEX IQ Robotics Competition.</p>
+          <p class="mb-4">I first discovered programming in 9th grade during my ICT classes, where I learned to build websites using HTML, CSS, and JavaScript. That same year, I was also the <span>programmer for</span> our school's <span>robotics team, "THS Overdrive",</span> where we even <span>won first place in the Programming Category of VEX IQ Robotics Competition.</span></p>
           
-          <p class="mb-4">Honestly, it wasn't until college (and very recently) that I truly immersed myself in Computer Science and reignited my passion for programming. Looking back, I sometimes regret not pursuing it more seriously when I was younger, but I'm making up for lost time. This past year alone has been incredibly transformative. I've participated in three hackathons (no wins yet, but the experience has been invaluable).</p>
+          <p class="mb-4">Honestly, it wasn't until college (and very recently) that I truly immersed myself in Computer Science and reignited my passion for programming. Looking back, I sometimes regret not pursuing it more seriously when I was younger, but I'm making up for lost time. This past year alone has been incredibly transformative. I've <span>participated in three hackathons</span> (no wins yet, but the experience has been invaluable).</p>
           
-          <p>I've gained proficiency in mobile app development using Flutter and React Native, and I've moved beyond vanilla web development to explore powerful frameworks and libraries like Next.js and React. To truly call myself a full-stack developer, I've also delved into backend development, building and managing databases and APIs. On top of all this, I've successfully completed several freelance programming projects.</p>
+          <p>I've gained proficiency in <span>mobile app development using Flutter and React Native</span>, and I've moved beyond vanilla web development to explore powerful <span>frameworks and libraries like Next.js and React</span>. To truly call myself a full-stack developer, I've also delved into <span>backend development, building and managing databases and APIs</span>. On top of all this, I've <span>successfully completed several freelance programming projects</span>.</p>
         </div>
 
         <div>
           <Icon name="custom:adiluexe-logo" class="block mb-4 mx-auto text-sm animate-bounce" />
           <h3 class="text-2xl font-bold mb-4 uppercase">Let's Connect</h3>
-          <p>If you're looking for someone who's proficient in both design and programming—someone who blends technical skills with a creative mindset—please feel free to reach out! I'm still open to freelance opportunities, but I'm particularly keen on gaining more formal experience in the tech industry, as most of my work thus far has been self-driven.</p>
+          <p>If you're looking for someone who's <span>proficient in both design and programming</span>—someone who <span>blends technical skills with a creative mindset</span>—please feel free to reach out! I'm still <span>open to freelance opportunities</span>, but I'm particularly <span>keen on gaining more formal experience in the tech industry</span>, as most of my work thus far has been self-driven.</p>
         </div>
       </div>
       <div class="w-px h-24 bg-text mx-auto mb-4"></div>
