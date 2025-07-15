@@ -18,7 +18,9 @@ const { $gsap } = useNuxtApp()
 
 const aboutContent = ref(null)
 const titleTextRef = ref(null)
+const contentContainer = ref(null)
 let morphTimeline = null
+const isContentRevealed = ref(false)
 
 const texts = [
   '<span class="font-spice">A</span>bout',
@@ -97,6 +99,115 @@ const stopMorphEffect = () => {
   })
 }
 
+const toggleContentVisibility = () => {
+  if (!contentContainer.value) return
+  
+  const textNodes = contentContainer.value.querySelectorAll('p')
+  
+  if (isContentRevealed.value) {
+    // Hide content - show only highlighted spans
+    isContentRevealed.value = false
+    
+    textNodes.forEach(paragraph => {
+      const spans = paragraph.querySelectorAll('span')
+      const walker = document.createTreeWalker(
+        paragraph,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
+      )
+      
+      const textNodes = []
+      let node
+      while (node = walker.nextNode()) {
+        // Skip text nodes that are inside spans (highlighted content)
+        if (!node.parentElement.closest('span')) {
+          textNodes.push(node)
+        }
+      }
+      
+      // Animate hiding non-highlighted text
+      textNodes.forEach(textNode => {
+        const wrapper = document.createElement('span')
+        wrapper.className = 'censored-text'
+        wrapper.style.cssText = `
+          background: repeating-linear-gradient(45deg, #333, #333 4px, #555 4px, #555 8px);
+          color: transparent;
+          border-radius: 2px;
+          filter: blur(0px);
+        `
+        textNode.parentNode.insertBefore(wrapper, textNode)
+        wrapper.appendChild(textNode)
+        
+        $gsap.fromTo(wrapper, 
+          { filter: 'blur(0px)', opacity: 1 },
+          { filter: 'blur(3px)', opacity: 0.7, duration: 0.3 }
+        )
+      })
+    })
+  } else {
+    // Reveal content - show all text
+    isContentRevealed.value = true
+    
+    const censoredElements = contentContainer.value.querySelectorAll('.censored-text')
+    
+    $gsap.to(censoredElements, {
+      filter: 'blur(0px)',
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.05,
+      onComplete: () => {
+        // Remove censored wrappers
+        censoredElements.forEach(wrapper => {
+          const textNode = wrapper.firstChild
+          wrapper.parentNode.insertBefore(textNode, wrapper)
+          wrapper.remove()
+        })
+      }
+    })
+  }
+}
+
+const initializeCensoredText = () => {
+  if (!contentContainer.value) return
+  
+  const textNodes = contentContainer.value.querySelectorAll('p')
+  
+  textNodes.forEach(paragraph => {
+    const walker = document.createTreeWalker(
+      paragraph,
+      NodeFilter.SHOW_TEXT,
+      null,
+      false
+    )
+    
+    const textNodesToCensor = []
+    let node
+    while (node = walker.nextNode()) {
+      // Skip text nodes that are inside spans (highlighted content)
+      if (!node.parentElement.closest('span') && node.textContent.trim()) {
+        textNodesToCensor.push(node)
+      }
+    }
+    
+    // Wrap non-highlighted text with censored styling
+    textNodesToCensor.forEach(textNode => {
+      const wrapper = document.createElement('span')
+      wrapper.className = 'censored-text'
+      wrapper.style.cssText = `
+        background: repeating-linear-gradient(45deg, #333, #333 4px, #555 4px, #555 8px);
+        color: transparent;
+        border-radius: 2px;
+        filter: blur(3px);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      `
+      textNode.parentNode.insertBefore(wrapper, textNode)
+      wrapper.appendChild(textNode)
+    })
+  })
+}
+
 onMounted(() => {
   $gsap.from(aboutContent.value.children, {
     duration: 1,
@@ -105,6 +216,11 @@ onMounted(() => {
     stagger: 0.1,
     ease: 'power4.out',
   })
+  
+  // Initialize censored text effect after a short delay
+  setTimeout(() => {
+    initializeCensoredText()
+  }, 1200)
 })
 </script>
 
@@ -120,38 +236,53 @@ onMounted(() => {
       </h1>
       <div class="w-full h-64 bg-primary mx-auto mb-4"></div>
       <div class="w-px h-24 bg-text mx-auto mb-4"></div>
-      <div class="max-w-4xl text-md space-y-6 mb-4 tracking-tight text-center uppercase">
+      
+      <!-- Interactive Content Toggle Button -->
+      <div class="mb-6">
+        <button 
+          @click="toggleContentVisibility"
+          class="group relative cursor-hover bg-primary text-background px-6 py-3 uppercase font-bold tracking-wider hover:bg-background hover:text-primary border-2 border-primary transition-all duration-300"
+        >
+          {{ isContentRevealed ? 'Show Summary' : 'Read Full Story' }}
+          <span class="absolute inset-0 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left -z-10"></span>
+        </button>
+        <p class="text-sm mt-2 opacity-70">
+          {{ isContentRevealed ? 'Click to see key highlights only' : 'Click to reveal the complete story' }}
+        </p>
+      </div>
+      
+      <div ref="contentContainer" class="max-w-4xl text-md space-y-6 mb-4 tracking-tight text-center uppercase">
         <div>
           <h2 class="text-2xl font-bold mb-4 uppercase">ABOUT ME</h2>
-          <p><span>Hi, I'm Exequel Adizon</span>! I'm currently an incoming fourth-year <span>Computer Science student</span> with a <span>keen interest in both design and development</span>. I'm exploring career paths as a <span>UI/UX Designer and Full-stack Developer.</span></p>
+          <p><span class="highlight-text">Hi, I'm Exequel Adizon</span>! I'm currently an incoming fourth-year <span class="highlight-text">Computer Science student</span> with a <span class="highlight-text">keen interest in both design and development</span>. I'm exploring career paths as a <span class="highlight-text">UI/UX Designer and Full-stack Developer.</span></p>
         </div>
 
         <div>
           <h3 class="text-2xl font-bold mb-4 uppercase">My Journey into Design</h3>
-          <p class="mb-4">My passion for design actually started with a love for drawing when I was young, which naturally led me to more creative pursuits. I delved into editing early on, experimenting with tools like Pizap, PicsArt, and Canva, before eventually mastering <span>professional software like Adobe Photoshop, Illustrator, and Figma.</span></p>
+          <p class="mb-4">My passion for design actually started with a love for drawing when I was young, which naturally led me to more creative pursuits. I delved into editing early on, experimenting with tools like Pizap, PicsArt, and Canva, before eventually mastering <span class="highlight-text">professional software like Adobe Photoshop, Illustrator, and Figma.</span></p>
           
-          <p class="mb-4">I entered the design field quite early. In high school, I was already editing posts and graphics for various Facebook pages. This led to my role as the <span>layout artist</span> for our <span>school's English journalism publication, "The Masonry,"</span> where our newspaper proudly <span>won several awards at the DSPC and RSPC in 2019.</span></p>
+          <p class="mb-4">I entered the design field quite early. In high school, I was already editing posts and graphics for various Facebook pages. This led to my role as the <span class="highlight-text">layout artist</span> for our <span class="highlight-text">school's English journalism publication, "The Masonry,"</span> where our newspaper proudly <span class="highlight-text">won several awards at the DSPC and RSPC in 2019.</span></p>
           
-          <p class="mb-4">In university, I had the honor of being the inaugural <span>Head of Graphics for Fortem Ardeas Esports</span>, the University of Makati's premier esports organization. There, I <span>established the brand identity and managed a vast array of graphics</span>, from live broadcast visuals to real-time graphic edits. I also created deliverables for internal events and <span>collaborated with prominent esports brands such as Moonton Philippines, AcadArena, and Tier One Entertainment.</span></p>
+          <p class="mb-4">In university, I had the honor of being the inaugural <span class="highlight-text">Head of Graphics for Fortem Ardeas Esports</span>, the University of Makati's premier esports organization. There, I <span class="highlight-text">established the brand identity and managed a vast array of graphics</span>, from live broadcast visuals to real-time graphic edits. I also created deliverables for internal events and <span class="highlight-text">collaborated with prominent esports brands such as Moonton Philippines, AcadArena, and Tier One Entertainment.</span></p>
 
           <p>
-            Around this time, I was also <span>taking on freelance design projects</span> alongside my organizational work. The money was good, but I eventually hit a <span>burnout</span>; designing wasn't fun anymore, and I started losing interest. This experience led me to create an account purely for posting whatever I wanted to create. This proved to be a very therapeutic process, giving me the confidence I needed to fall back in love with design. The works you see in my "playground" section are all from that account, which <span>amassed over 1 million views and half a million likes</span> in just a month of posting. Although I've stopped posting on that account to focus on more programming related activities, I'm incredibly grateful for that experience and aspire to replicate its success someday.
+            Around this time, I was also <span class="highlight-text">taking on freelance design projects</span> alongside my organizational work. The money was good, but I eventually hit a <span class="highlight-text">burnout</span>; designing wasn't fun anymore, and I started losing interest. This experience led me to create an account purely for posting whatever I wanted to create. This proved to be a very therapeutic process, giving me the confidence I needed to fall back in love with design. The works you see in my "playground" section are all from that account, which <span class="highlight-text">amassed over 1 million views and half a million likes</span> in just a month of posting. Although I've stopped posting on that account to focus on more programming related activities, I'm incredibly grateful for that experience and aspire to replicate its success someday.
           </p>
         </div>
 
         <div>
           <h3 class="text-2xl font-bold mb-4 uppercase">My Exploration into Development</h3>
-          <p class="mb-4">I first discovered programming in 9th grade during my ICT classes, where I learned to build websites using HTML, CSS, and JavaScript. That same year, I was also the <span>programmer for</span> our school's <span>robotics team, "THS Overdrive",</span> where we even <span>won first place in the Programming Category of VEX IQ Robotics Competition.</span></p>
+          <p class="mb-4">I first discovered programming in 9th grade during my ICT classes, where I learned to build websites using HTML, CSS, and JavaScript. That same year, I was also the <span class="highlight-text">programmer for</span> our school's <span class="highlight-text">robotics team, "THS Overdrive",</span> where we even <span class="highlight-text">won first place in the Programming Category of VEX IQ Robotics Competition.</span></p>
           
-          <p class="mb-4">Honestly, it wasn't until college (and very recently) that I truly immersed myself in Computer Science and reignited my passion for programming. Looking back, I sometimes regret not pursuing it more seriously when I was younger, but I'm making up for lost time. This past year alone has been incredibly transformative. I've <span>participated in three hackathons</span> (no wins yet, but the experience has been invaluable).</p>
+          <p class="mb-4">Honestly, it wasn't until college (and very recently) that I truly immersed myself in Computer Science and reignited my passion for programming. Looking back, I sometimes regret not pursuing it more seriously when I was younger, but I'm making up for lost time. This past year alone has been incredibly transformative. I've <span class="highlight-text">participated in three hackathons</span> (no wins yet, but the experience has been invaluable).</p>
           
-          <p>I've gained proficiency in <span>mobile app development using Flutter and React Native</span>, and I've moved beyond vanilla web development to explore powerful <span>frameworks and libraries like Next.js and React</span>. To truly call myself a full-stack developer, I've also delved into <span>backend development, building and managing databases and APIs</span>. On top of all this, I've <span>successfully completed several freelance programming projects</span>.</p>
+          <p>I've gained proficiency in <span class="highlight-text">mobile app development using Flutter and React Native</span>, and I've moved beyond vanilla web development to explore powerful <span class="highlight-text">frameworks and libraries like Next.js and React</span>. To truly call myself a full-stack developer, I've also delved into <span class="highlight-text">backend development, building and managing databases and APIs</span>. On top of all this, I've <span class="highlight-text">successfully completed several freelance programming projects</span>.</p>
         </div>
 
         <div>
           <Icon name="custom:adiluexe-logo" class="block mb-4 mx-auto text-sm animate-bounce" />
           <h3 class="text-2xl font-bold mb-4 uppercase">Let's Connect</h3>
-          <p>If you're looking for someone who's <span>proficient in both design and programming</span>—someone who <span>blends technical skills with a creative mindset</span>—please feel free to reach out! I'm still <span>open to freelance opportunities</span>, but I'm particularly <span>keen on gaining more formal experience in the tech industry</span>, as most of my work thus far has been self-driven.</p>
+          <p>If you're looking for someone who's <span class="highlight-text">proficient in both design and programming</span>—someone who <span class="highlight-text">blends technical skills with a creative mindset</span>—please feel free to reach out! I'm still <span class="highlight-text">open to freelance opportunities</span>, but I'm particularly <span class="highlight-text">keen on gaining more formal experience in the tech industry</span>, as most of my work thus far has been self-driven.</p>
         </div>
       </div>
       <div class="w-px h-24 bg-text mx-auto mb-4"></div>
@@ -201,3 +332,31 @@ onMounted(() => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.highlight-text {
+  color: var(--color-primary);
+  font-weight: 500;
+  position: relative;
+}
+
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+.censored-text {
+  display: inline;
+  position: relative;
+}
+
+.censored-text:hover {
+  cursor: pointer;
+}
+</style>
