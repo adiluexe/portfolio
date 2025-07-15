@@ -1,12 +1,12 @@
 <template>
   <div class="group cursor-pointer w-full relative overflow-hidden">
     <!-- Project Image Container -->
-    <div class="relative w-full aspect-[16/9] mb-4 overflow-hidden bg-background border-2 border-text">
+    <div class="relative w-full aspect-[16/9] mb-4 overflow-hidden bg-background shadow-md border-1 rounded-md">
       <!-- Special case for collaboration card -->
-      <div v-if="project.type === 'Collaboration'" class="w-full h-full flex flex-col items-center justify-center bg-primary text-background">
-        <Icon name="custom:adiluexe-logo" class="text-6xl mb-4 animate-pulse" />
-        <h3 class="text-2xl font-bold uppercase tracking-tighter">Let's Collaborate</h3>
-        <p class="text-sm mt-2 opacity-80">Ready for your next project?</p>
+      <div v-if="project.type === 'Collaboration'" class="w-full h-full flex flex-col items-center justify-center bg-accent text-background uppercase">
+        <Icon name="custom:adiluexe-logo" class="text-6xl mb-4 animate-spin-slow" />
+        <h3 class="text-4xl font-bold tracking-tight">Let's Work</h3>
+        <p class="text-md mt-2 opacity-80">Ready for your next project?</p>
       </div>
       
       <!-- Regular project image -->
@@ -77,9 +77,9 @@
     </div>
     
     <!-- Project Info -->
-    <div class="flex justify-between items-center border-b border-text pb-2 tracking-tighter">
+    <div class="flex justify-between items-center border-b border-text pb-2 px-1 tracking-tighter">
       <h3 class="text-md font-bold uppercase">{{ project.name }}</h3>
-      <p class="text-sm uppercase">{{ project.stack }}</p>
+      <p class="text-sm uppercase text-right flex-shrink-0 ml-4">{{ project.stack }}</p>
     </div>
   </div>
 </template>
