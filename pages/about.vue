@@ -109,7 +109,6 @@ const toggleContentVisibility = () => {
     isContentRevealed.value = false
     
     textNodes.forEach(paragraph => {
-      const spans = paragraph.querySelectorAll('span')
       const walker = document.createTreeWalker(
         paragraph,
         NodeFilter.SHOW_TEXT,
@@ -117,54 +116,54 @@ const toggleContentVisibility = () => {
         false
       )
       
-      const textNodes = []
+      const textNodesToCensor = []
       let node
       while (node = walker.nextNode()) {
         // Skip text nodes that are inside spans (highlighted content)
-        if (!node.parentElement.closest('span')) {
-          textNodes.push(node)
+        if (!node.parentElement.closest('span') && node.textContent.trim()) {
+          textNodesToCensor.push(node)
         }
       }
       
       // Animate hiding non-highlighted text
-      textNodes.forEach(textNode => {
+      textNodesToCensor.forEach(textNode => {
         const wrapper = document.createElement('span')
         wrapper.className = 'censored-text'
         wrapper.style.cssText = `
           background: repeating-linear-gradient(45deg, #333, #333 4px, #555 4px, #555 8px);
           color: transparent;
           border-radius: 2px;
-          filter: blur(0px);
+          filter: blur(2px);
+          opacity: 0.8;
         `
         textNode.parentNode.insertBefore(wrapper, textNode)
         wrapper.appendChild(textNode)
         
         $gsap.fromTo(wrapper, 
           { filter: 'blur(0px)', opacity: 1 },
-          { filter: 'blur(3px)', opacity: 0.7, duration: 0.3 }
+          { filter: 'blur(2px)', opacity: 0.8, duration: 0.2 }
         )
       })
     })
   } else {
-    // Reveal content - show all text
+    // Reveal content - show all text with immediate transition
     isContentRevealed.value = true
     
     const censoredElements = contentContainer.value.querySelectorAll('.censored-text')
     
-    $gsap.to(censoredElements, {
-      filter: 'blur(0px)',
-      opacity: 1,
-      duration: 0.5,
-      stagger: 0.05,
-      onComplete: () => {
-        // Remove censored wrappers
-        censoredElements.forEach(wrapper => {
-          const textNode = wrapper.firstChild
-          wrapper.parentNode.insertBefore(textNode, wrapper)
-          wrapper.remove()
-        })
-      }
+    // Instantly remove censored wrappers and show clean text
+    censoredElements.forEach(wrapper => {
+      const textNode = wrapper.firstChild
+      wrapper.parentNode.insertBefore(textNode, wrapper)
+      wrapper.remove()
     })
+    
+    // Immediate fade-in of the clean text
+    const allTextNodes = contentContainer.value.querySelectorAll('p')
+    $gsap.fromTo(allTextNodes, 
+      { opacity: 0.8 },
+      { opacity: 1, duration: 0.1, ease: 'power2.out' }
+    )
   }
 }
 
@@ -198,9 +197,8 @@ const initializeCensoredText = () => {
         background: repeating-linear-gradient(45deg, #333, #333 4px, #555 4px, #555 8px);
         color: transparent;
         border-radius: 2px;
-        filter: blur(3px);
-        opacity: 0.7;
-        transition: all 0.3s ease;
+        filter: blur(2px);
+        opacity: 0.8;
       `
       textNode.parentNode.insertBefore(wrapper, textNode)
       wrapper.appendChild(textNode)
@@ -338,17 +336,6 @@ onMounted(() => {
   color: var(--color-primary);
   font-weight: 500;
   position: relative;
-}
-
-.highlight-text::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: currentColor;
-  opacity: 0.3;
 }
 
 .censored-text {
