@@ -143,7 +143,7 @@ onMounted(() => {
           <!-- Middle Column -->
           <div class="w-1/3 max-w-xs text-center">
             <!-- Animated hero image / illustration goes here -->
-            <div class="h-80 bg-accent"></div>
+            <div class="h-80 bg-primary"></div>
           </div>
           <!-- Right Column -->
           <div class="w-1/3 max-w-xs text-center">
