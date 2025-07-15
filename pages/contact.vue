@@ -214,7 +214,7 @@ onMounted(() => {
           </a>
         </div>
       </div>
-      <!-- <div class="w-px h-32 bg-text mx-auto mb-8"></div> -->
+      
       
     </div>
   </div>
