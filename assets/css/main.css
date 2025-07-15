@@ -42,6 +42,7 @@
 
 /* Global cursor hiding for custom cursor implementation */
 .cursor-hover,
+.cursor-not-allowed,
 a, 
 button, 
 [role="button"],

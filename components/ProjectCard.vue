@@ -1,5 +1,5 @@
 <template>
-  <div class="group cursor-pointer w-full relative overflow-hidden">
+  <div class="group cursor-hover w-full relative overflow-hidden">
     <!-- Project Image Container -->
     <div class="relative w-full aspect-[16/9] mb-4 overflow-hidden bg-background shadow-md border-1 rounded-md">
       <!-- Special case for collaboration card -->
