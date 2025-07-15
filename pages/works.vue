@@ -101,28 +101,28 @@ const projects = ref([
   { 
     id: 1, 
     name: 'PORTFOLIO', 
-    description: 'Personal portfolio website showcasing my journey as a creative developer',
+    description: 'A personal portfolio site highlighting my work, skills, and creative journey as a developer and designer.',
     stack: 'NUXT.JS / VUE.JS / GSAP / TAILWIND',
     image: '/works/adiluexe.png',
     github: 'https://github.com/adiluexe/portfolio',
-    website: 'https://exequeladizon.com',
+    website: 'https://adiluexe.vercel.app',
     type: 'Web Development'
   },
   { 
     id: 2, 
     name: 'HERONFIT', 
-    description: 'Comprehensive fitness tracking mobile app with AI-powered workout recommendations',
+    description: 'A fitness app for the University of Makati gym that helps you track workouts, monitor progress, get personalized recommendations, and book sessions—with an integrated gym management system.',
     stack: 'FLUTTER / NEXT.JS / REACT / SUPABASE / FLASK',
     image: '/works/heronfit.png',
-    github: 'https://github.com/adiluexe/heronfit',
+    github: 'https://github.com/skypiea-tech/heronfit',
     website: null, // Mobile app - no website
-    type: 'Mobile Development'
+    type: 'Mobile + Web'
   },
   { 
     id: 3, 
     name: 'ALARP', 
-    description: 'Interactive alarm app with custom UI animations and 3D elements',
-    stack: 'FLUTTER / SUPABASE / CUSTOMPAINT / FLUTTER3D',
+    description: 'An interactive learning app for radiologic technology students—explore 3D radiographic positioning, practice 2D collimation with instant feedback, and sharpen your skills through timed challenges.',
+    stack: 'FLUTTER / SUPABASE / CUSTOMPAINT / 3DVIEWER',
     image: '/works/alarp.png',
     github: 'https://github.com/adiluexe/alarp',
     website: null, // Mobile app - no website
@@ -131,22 +131,22 @@ const projects = ref([
   { 
     id: 4, 
     name: 'SNAPGRADE', 
-    description: 'AI-powered grading system that automatically evaluates student submissions',
-    stack: 'NEXT.JS / REACT / SPRINGBOOT / AI/ML',
+    description: '[In development] An AI-powered grading system designed for educators to easily and efficiently evaluate student submissions by scanning bubble sheets. Results are exportable in Excel and other related formats, streamlining the assessment process.',
+    stack: 'NEXT.JS / REACT / OPENCV / TENSORFLOW / FASTAPI',
     image: '/works/snapgrade.png',
     github: 'https://github.com/adiluexe/snapgrade',
-    website: 'https://snapgrade.vercel.app',
-    type: 'Web Development'
+    website: 'https://snapgrade-ai.vercel.app',
+    type: 'Web + ML'
   },
   { 
     id: 5, 
     name: 'BATHALA', 
-    description: 'Filipino mythology-inspired indie game built with Godot engine',
-    stack: 'GODOT / GDSCRIPT / GAME DESIGN',
-    image: '/images/bluehair.jpg', // Placeholder until you have the actual image
-    github: 'https://github.com/adiluexe/bathala',
+    description: '[In development] A Web3 roguelike card game inspired by Filipino mythology, where every choice shapes your journey. Experience strategic gameplay blending elements of Balatro and Slay the Spire, with unique story-driven mechanics.',
+    stack: 'GODOT / GDSCRIPT / SOLIDITY / ETHEREUM / WEB3.JS',
+    image: '/works/bathala.png', 
+    github: 'https://github.com/devlocke-acsad/bathala',
     website: null, // Game - no website
-    type: 'Game Development'
+    type: 'Game + Web3'
   },
   { 
     id: 6, 
