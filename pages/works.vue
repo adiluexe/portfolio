@@ -172,16 +172,16 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full min-h-screen flex flex-col justify-center text-center py-16 md:py-24 lg:py-32 px-4 md:px-8 lg:px-0">
-    <div ref="worksContent" class="w-full">
+  <div class="w-full min-h-screen flex flex-col justify-center text-center py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0">
+    <div ref="worksContent" class="w-full max-w-7xl mx-auto">
       <h1 
-        class="text-5xl md:text-7xl lg:text-8xl font-normal uppercase tracking-tighter mb-8 md:mb-12 lg:mb-16 font-satoshi cursor-hover"
+        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal uppercase tracking-tighter mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 font-satoshi cursor-hover leading-none"
         @mouseenter="startMorphEffect"
         @mouseleave="stopMorphEffect"
       >
         <span ref="titleTextRef"><span class="font-spice">W</span>orks</span>
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 p-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8">
         <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
       </div>
     </div>
