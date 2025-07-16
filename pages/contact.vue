@@ -158,33 +158,33 @@ onMounted(() => {
   <div class="w-full min-h-screen flex flex-col items-center justify-center text-center py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0 tracking-tighter">
     <div ref="contactContent" class="w-full max-w-6xl">
       <h1 
-        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal uppercase mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 font-satoshi tracking-tighter cursor-hover leading-none"
+        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal uppercase mb-44 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 font-satoshi tracking-tighter cursor-hover leading-none"
         @mouseenter="startMorphEffect"
         @mouseleave="stopMorphEffect"
       >
         <span ref="titleTextRef"><span class="font-spice">C</span>ontact</span>
       </h1>
 
-      <div class="text-center mb-3 sm:mb-4 text-sm sm:text-base md:text-lg uppercase px-2 sm:px-4">
+      <div class="text-center mb-8 sm:mb-8 text-lg sm:text-lg md:text-lg uppercase px-2 sm:px-4">
         <Icon name="custom:adiluexe-logo" class="block mb-3 sm:mb-4 mx-auto text-sm animate-bounce" />
         <p class="">Let's collaborate</p>
         <p class="">and build something <span ref="adjectiveRef" class="font-bold">amazing</span> together</p>
       </div>
-      <div class="w-px h-32 sm:h-40 md:h-48 lg:h-56 xl:h-72 bg-text mx-auto mb-4 sm:mb-6 md:mb-8"></div>
+      <div class="w-px h-64 sm:h-64 md:h-64 lg:h-56 xl:h-72 bg-text mx-auto mb-4 sm:mb-6 md:mb-8"></div>
       <div class="text-center mb-3 sm:mb-4 w-full max-w-4xl mx-auto px-2 sm:px-4">
         <a 
           href="mailto:exequel.adizon@gmail.com"
           class="group relative inline-flex items-center gap-1 sm:gap-2 cursor-hover transition-all duration-300 mb-3 sm:mb-4 flex-wrap justify-center"
         >
-          <span class="relative group-hover:text-primary transition-colors duration-300 text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl break-all">
-            EXEQUEL.ADIZON@GMAIL.COM
+          <span class="relative group-hover:text-primary transition-colors duration-300 text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl">
+            <span class="block sm:inline">EXEQUEL.ADIZON</span><span class="block sm:inline">@GMAIL.COM</span>
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full"></span>
           </span>
           <svg class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
             <path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
           </svg>
         </a>
-        <div class="flex items-center justify-center gap-2 sm:gap-4 text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl flex-wrap">
+        <div class="mb-16 flex items-center justify-center gap-2 sm:gap-4 text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl flex-wrap">
           <a 
             href="https://github.com/adiluexe" 
             target="_blank"
@@ -198,7 +198,7 @@ onMounted(() => {
               <path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" />
             </svg>
           </a>
-          <span class="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-satoshi">/</span>
+          <span class="text-4xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-satoshi">/</span>
           <a 
             href="https://www.linkedin.com/in/exequel-adizon/" 
             target="_blank"
