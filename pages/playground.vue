@@ -355,10 +355,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full min-h-screen flex flex-col justify-center text-center py-16 md:py-24 lg:py-32 px-4 md:px-8 lg:px-0">
+  <div class="w-full min-h-screen flex flex-col justify-center text-center py-8 md:py-16 lg:py-24 px-4 md:px-8 lg:px-0">
     <div ref="playgroundContent" class="w-full">
       <h1 
-        class="text-5xl md:text-7xl lg:text-8xl font-normal uppercase tracking-tighter mb-8 md:mb-12 lg:mb-16 font-satoshi cursor-hover"
+        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal uppercase tracking-tighter mt-16 md:mt-12 lg:mt-0 xl:mt-0 font-satoshi cursor-hover"
         @mouseenter="startMorphEffect"
         @mouseleave="stopMorphEffect"
       >
