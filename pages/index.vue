@@ -118,7 +118,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full min-h-screen flex flex-col px-4 sm:px-6 md:px-8">
+  <div class="w-full min-h-screen max-h-screen flex flex-col px-4 sm:px-6 md:px-8">
     <!-- Main Hero Name -->
     <div class="flex-1 flex items-center justify-center pt-24 pb-8 sm:pt-20 md:pt-24">
       <h1 
