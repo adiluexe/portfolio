@@ -114,6 +114,42 @@ onMounted(() => {
     opacity: 0, // Start fully transparent
     ease: 'power4.out',
   })
+  
+  // Animate mobile layout elements
+  $gsap.from('.mobile-icon', {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    delay: 0.3,
+    ease: 'power4.out',
+  })
+  
+  $gsap.from('.mobile-text', {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    stagger: 0.1,
+    delay: 0.5,
+    ease: 'power4.out',
+  })
+  
+  $gsap.from('.mobile-image', {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    delay: 0.8,
+    ease: 'power4.out',
+  })
+  
+  // Animate desktop layout elements
+  $gsap.from('.desktop-column', {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    stagger: 0.2,
+    delay: 0.4,
+    ease: 'power4.out',
+  })
 })
 </script>
 
@@ -137,22 +173,22 @@ onMounted(() => {
         <!-- Mobile Layout: Single Column Stack -->
         <div class="block md:hidden space-y-8">
           <!-- Spinning Icon -->
-          <div class="text-center">
+          <div class="text-center mobile-icon">
             <Icon name="custom:adiluexe-logo" class="block mx-auto text-lg animate-spin-slow" />
           </div>
           
           <!-- Content Text -->
           <div class="text-center space-y-4">
-            <p class="text-lg sm:text-base uppercase leading-tight px-2">
+            <p class="text-lg sm:text-base uppercase leading-tight px-2 mobile-text">
               Exequel Adizon (@adiluexe) is a designer and developer based in Taguig, Philippines
             </p>
-            <p class="text-lg sm:text-base uppercase leading-tight px-2">
+            <p class="text-lg sm:text-base uppercase leading-tight px-2 mobile-text">
               Passionate about crafting seamless and captivating digital experiences from design to code
             </p>
           </div>
           
           <!-- Hero Image -->
-          <div class="text-center">
+          <div class="text-center mobile-image">
             <div class="h-64 sm:h-72 bg-primary rounded"></div>
           </div>
         </div>
@@ -160,17 +196,17 @@ onMounted(() => {
         <!-- Tablet and Desktop Layout: Three Columns -->
         <div class="hidden md:flex justify-between items-center text-sm lg:text-base xl:text-lg uppercase">
           <!-- Left Column -->
-          <div class="w-1/3 max-w-xs text-center">
+          <div class="w-1/3 max-w-xs text-center desktop-column">
             <Icon name="custom:adiluexe-logo" class="block mb-4 lg:mb-6 xl:mb-8 mx-auto text-lg lg:text-xl animate-spin-slow" />
             <p class="leading-tight">Exequel Adizon (@adiluexe) is a designer and developer based in Taguig, Philippines</p>
           </div>
           <!-- Middle Column -->
-          <div class="w-1/3 max-w-xs text-center">
+          <div class="w-1/3 max-w-xs text-center desktop-column">
             <!-- Animated hero image / illustration goes here -->
             <div class="h-48 md:h-56 lg:h-64 xl:h-80 bg-primary rounded"></div>
           </div>
           <!-- Right Column -->
-          <div class="w-1/3 max-w-xs text-center">
+          <div class="w-1/3 max-w-xs text-center desktop-column">
             <Icon name="custom:adiluexe-logo" class="block mb-4 lg:mb-6 xl:mb-8 mx-auto text-lg lg:text-xl animate-spin-slow" />
             <p class="leading-tight">Passionate about crafting seamless and captivating digital experiences from design to code</p>
           </div>
