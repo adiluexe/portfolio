@@ -155,7 +155,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="w-full min-h-screen max-h-screen flex flex-col items-center justify-center text-center py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0 tracking-tighter">
+  <div class="w-full min-h-screen flex flex-col items-center justify-center text-center py-8 sm:py-12 md:py-16 lg:py-24 xl:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0 tracking-tighter">
     <div ref="contactContent" class="w-full max-w-6xl">
       <h1 
         class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal uppercase py-16 md:py-16 lg:py-16 xl:py-16 font-satoshi tracking-tighter cursor-hover leading-none"

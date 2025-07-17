@@ -82,30 +82,30 @@ const closeMenu = () => {
         class="fixed inset-0 bg-accent flex flex-col justify-center items-center text-center z-30 pointer-events-auto"
       >
         <ul class="space-y-10 text-4xl md:text-5xl font-normal uppercase tracking-tighter text-background">
-          <li>
-            <NuxtLink to="/works" @click="closeMenu">
-              <span class="block text-lg font-normal">01</span>
-              <span class="font-spice">W</span>ORKS
-            </NuxtLink>
-          </li>
-          <li>
+            <li>
             <NuxtLink to="/about" @click="closeMenu">
-              <span class="block text-lg font-normal">02</span>
+              <span class="block text-lg font-normal">01</span>
               <span class="font-spice">A</span>BOUT
             </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/playground" @click="closeMenu">
-              <span class="block text-lg font-normal">03</span>
-              <span class="font-spice">P</span>LAYGROUND
+            </li>
+            <li>
+            <NuxtLink to="/works" @click="closeMenu">
+              <span class="block text-lg font-normal">02</span>
+              <span class="font-spice">W</span>ORKS
             </NuxtLink>
-          </li>
-          <li>
+            </li>
+            <li>
             <NuxtLink to="/contact" @click="closeMenu">
-              <span class="block text-lg font-normal">04</span>
+              <span class="block text-lg font-normal">03</span>
               <span class="font-spice">C</span>ONTACT
             </NuxtLink>
-          </li>
+            </li>
+            <li>
+            <NuxtLink to="/playground" @click="closeMenu">
+              <span class="block text-lg font-normal">04</span>
+              <span class="font-spice">P</span>LAYGROUND
+            </NuxtLink>
+            </li>
         </ul>
       </div>
     </transition>
