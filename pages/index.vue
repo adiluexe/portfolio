@@ -120,10 +120,10 @@ onMounted(() => {
 <template>
   <div class="w-full min-h-screen flex flex-col px-4 sm:px-6 md:px-8">
     <!-- Main Hero Name -->
-    <div class="flex-1 flex items-center justify-center pt-16 sm:pt-20 md:pt-24">
+    <div class="flex-1 flex items-center justify-center pt-24 pb-8 sm:pt-20 md:pt-24">
       <h1 
         ref="heroTitle" 
-        class="text-7xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-9xl font-normal uppercase tracking-tighter text-primary cursor-hover leading-tight text-center"
+        class="text-6xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-9xl font-normal uppercase tracking-tighter text-primary cursor-hover leading-tight text-center"
         @mouseenter="startGlitchEffect"
         @mouseleave="stopGlitchEffect"
       >
@@ -135,7 +135,7 @@ onMounted(() => {
     <div class="w-full pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-8">
       <div class="container mx-auto max-w-7xl">
         <!-- Mobile Layout: Single Column Stack -->
-        <div class="block pb-16 md:hidden space-y-8">
+        <div class="block md:hidden space-y-8">
           <!-- Spinning Icon -->
           <div class="text-center">
             <Icon name="custom:adiluexe-logo" class="block mx-auto text-lg animate-spin-slow" />
