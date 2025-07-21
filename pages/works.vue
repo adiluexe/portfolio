@@ -140,6 +140,26 @@ const projects = ref([
   },
   { 
     id: 5, 
+    name: 'KOPI KOUNT', 
+    description: 'A visually engaging, mobile-friendly website for Kopi Kount—Palpitate Moderately, a coffee shop in East Rembo, Makati City. Designed to showcase the shop’s unique offerings and inviting atmosphere, crafted by Salig.',
+    stack: 'HTML / CSS / JAVASCRIPT / BOOTSTRAP',
+    image: '/works/kopi_kount.webp', 
+    github: 'https://github.com/exzequel/kopi-kount',
+    website: 'https://kopi-kount.vercel.app/', 
+    type: 'Web'
+  },
+  { 
+    id: 6, 
+    name: 'CALBEANS', 
+    description: "A vibrant, mobile-friendly website for Calbeans Coffee, designed to highlight the shop’s specialty brews, signature products, and cozy atmosphere. Discover the Calbeans experience through engaging visuals and intuitive navigation.",
+    stack: 'HTML / CSS / JAVASCRIPT / BOOTSTRAP',
+    image: '/works/calbeans.webp', 
+    github: 'https://github.com/exzequel/calbeans-coffee',
+    website: 'https://calbeans.vercel.app/',
+    type: 'Web'
+  },
+  { 
+    id: 7, 
     name: 'BATHALA', 
     description: '[In development] A Web3 roguelike card game inspired by Filipino mythology, where every choice shapes your journey. Experience strategic gameplay blending elements of Balatro and Slay the Spire, with unique story-driven mechanics.',
     stack: 'GODOT / GDSCRIPT / SOLIDITY / ETHEREUM / WEB3.JS',
@@ -149,7 +169,7 @@ const projects = ref([
     type: 'Game + Web3'
   },
   { 
-    id: 6, 
+    id: 8, 
     name: 'LET\'S WORK TOGETHER', 
     description: 'Have a project in mind? Let\'s collaborate and create something amazing',
     stack: 'YOUR IDEAS + MY SKILLS',
