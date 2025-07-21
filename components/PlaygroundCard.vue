@@ -10,7 +10,7 @@
         target="_blank"
         rel="noopener noreferrer"
         class="absolute inset-0 z-10 cursor-pointer"
-        :title="`View ${playgroundItem.name} on ${playgroundItem.postUrl.includes('instagram') ? 'Instagram' : 'TikTok'}`"
+        :title="`View ${playgroundItem.name} on ${getPlatformName(playgroundItem.postUrl)}`"
       ></a>
 
       <video 
@@ -38,7 +38,44 @@
             v-if="playgroundItem.postUrl && playgroundItem.postUrl !== 'https://www.instagram.com/p/YOUR_POST_ID/' && !playgroundItem.postUrl.includes('YOUR_VIDEO_ID')"
             class="text-white text-sm font-medium uppercase"
           >
-            View on {{ playgroundItem.postUrl.includes('instagram') ? 'Instagram' : 'TikTok' }}
+            View on {{ getPlatformName(playgroundItem.postUrl) }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Content -->
+    <div v-else-if="playgroundItem.type === 'image'" class="bg-primary w-full aspect-[4/5] mb-4 overflow-hidden relative cursor-hover rounded-md shadow-md">
+      <!-- Clickable overlay for the entire image -->
+      <a 
+        v-if="playgroundItem.postUrl && playgroundItem.postUrl !== 'https://www.instagram.com/p/YOUR_POST_ID/' && !playgroundItem.postUrl.includes('YOUR_VIDEO_ID')"
+        :href="playgroundItem.postUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="absolute inset-0 z-10 cursor-pointer"
+        :title="`View ${playgroundItem.name} on ${getPlatformName(playgroundItem.postUrl)}`"
+      ></a>
+
+      <NuxtImg 
+        :src="playgroundItem.src"
+        :alt="playgroundItem.name"
+        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        format="webp"
+      />
+      
+      <!-- External link overlay -->
+      <div class="absolute inset-0 bg-primary bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center pointer-events-none">
+        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center space-x-2">
+          <Icon 
+            name="mdi:external-link" 
+            class="text-white text-4xl" 
+          />
+          <span 
+            v-if="playgroundItem.postUrl && playgroundItem.postUrl !== 'https://www.instagram.com/p/YOUR_POST_ID/' && !playgroundItem.postUrl.includes('YOUR_VIDEO_ID')"
+            class="text-white text-sm font-medium uppercase"
+          >
+            View on {{ getPlatformName(playgroundItem.postUrl) }}
           </span>
         </div>
       </div>
@@ -106,6 +143,16 @@ const props = defineProps({
 
 const titleRef = ref(null)
 const { $gsap } = useNuxtApp()
+
+const getPlatformName = (url) => {
+  if (url.includes('instagram.com')) return 'Instagram'
+  if (url.includes('tiktok.com')) return 'TikTok'
+  if (url.includes('facebook.com')) return 'Facebook'
+  if (url.includes('behance.net')) return 'Behance'
+  if (url.includes('dribbble.com')) return 'Dribbble'
+  if (url.includes('youtube.com') || url.includes('youtu.be')) return 'YouTube'
+  return 'External Link'
+}
 
 const onTitleHover = () => {
   if (titleRef.value && $gsap) {

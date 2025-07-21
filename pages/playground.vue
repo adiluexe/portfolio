@@ -341,6 +341,97 @@ const playgroundItems = ref([
     postUrl: 'https://www.instagram.com/p/C7oDpuMvyIL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==', // Replace with actual URL
     link: true 
   },
+
+  { 
+    id: 28, 
+    name: 'ARDE 2024', 
+    type: 'image',
+    src: '/images/ardeas/arde_cover_2024.webp',
+    poster: '/images/ardeas/arde_cover_2024.webp',
+    postUrl: 'https://www.facebook.com/share/14JEpfqjFXL/',
+    link: true 
+  },
+
+  { 
+    id: 29, 
+    name: 'ARDE ESPORTS MANIA', 
+    type: 'image',
+    src: '/images/ardeas/arde_esports_mania.webp',
+    poster: '/images/ardeas/arde_esports_mania.webp',
+    postUrl: 'https://www.facebook.com/share/14JEpfqjFXL/',
+    link: true 
+  },
+
+  { 
+    id: 30, 
+    name: 'ARDE X PARTNERSHIPS', 
+    type: 'image',
+    src: '/images/ardeas/arde_partner.webp',
+    poster: '/images/ardeas/arde_partner.webp',
+    postUrl: 'https://www.facebook.com/share/p/1Cj26QqaDJ/',
+    link: true 
+  },
+
+  { 
+    id: 31, 
+    name: 'ARDE PREMIER CUP', 
+    type: 'image',
+    src: '/images/ardeas/arde_premier_cup.webp',
+    poster: '/images/ardeas/arde_premier_cup.webp',
+    postUrl: 'https://www.facebook.com/share/p/16kXSxX9VK/',
+    link: true 
+  },
+
+  { 
+    id: 32, 
+    name: 'ARDE FRIENDSHIP GAMES', 
+    type: 'image',
+    src: '/images/ardeas/arde_friendship.webp',
+    poster: '/images/ardeas/arde_friendship.webp',
+    postUrl: 'https://www.facebook.com/share/p/16jfAofACo/',
+    link: true 
+  },
+
+  { 
+    id: 33, 
+    name: 'ARDE PCC', 
+    type: 'image',
+    src: '/images/ardeas/arde_pcc.webp',
+    poster: '/images/ardeas/arde_pcc.webp',
+    postUrl: 'https://www.facebook.com/share/p/1FHy4TLF9z/',
+    link: true 
+  },
+
+  { 
+    id: 34, 
+    name: 'ARDE ROSTER', 
+    type: 'image',
+    src: '/images/ardeas/arde_roster.webp',
+    poster: '/images/ardeas/arde_roster.webp',
+    postUrl: 'https://www.facebook.com/share/p/1FHy4TLF9z/',
+    link: true 
+  },
+
+  { 
+    id: 35, 
+    name: 'ARDE iTAM GAMECON', 
+    type: 'image',
+    src: '/images/ardeas/arde_itam_gameday.webp',
+    poster: '/images/ardeas/arde_itam_gameday.webp',
+    postUrl: 'https://www.facebook.com/share/p/19QswyF2R7/',
+    link: true 
+  },
+
+{ 
+    id: 36, 
+    name: 'ARDE 2023', 
+    type: 'image',
+    src: '/images/ardeas/arde_2023.webp',
+    poster: '/images/ardeas/arde_2023.webp',
+    postUrl: 'https://www.behance.net/gallery/168862647/Fortem-Ardeas-Esports-Social-Media-Graphics',
+    link: true 
+  },
+
 ])
 
 onMounted(() => {
